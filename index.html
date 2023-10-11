@@ -3,145 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Título</title>
-    <meta name="description" content="follow me to see more content">
-    <meta name="image" content="#">
-
-    <!-- Metadatos Open Graph para Facebook -->
-    <meta property="og:title" content="Facebook">
-    <meta property="og:description" content="follow me to see more content">
-    <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3ogsjly1xJZRcSpxjKwbRTz_LyEfMJEzYxC8fVYokiLIPdZhfnKg4PxygRhOdna9sG6MvZYLWerRP3C-WLrjKca7GFQQtVJdixlLKcATrqEoxltx11XdQygz1WxHgHQ9OwSm5mlAb9oXwzJrkc4t5NSietEogYG3Jl1HDxkZIcV7dhVZoF_cqdKYPnFU/s600/20231011_060928_0000.jpg">
-    <meta property="og:url" content="https://www.google.com">
-    <meta property="og:type" content="website">
-
-    <!-- Metadatos Twitter Card para Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Título para Twitter">
-    <meta name="twitter:description" content="follow me to see more content">
-    <meta name="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh3ogsjly1xJZRcSpxjKwbRTz_LyEfMJEzYxC8fVYokiLIPdZhfnKg4PxygRhOdna9sG6MvZYLWerRP3C-WLrjKca7GFQQtVJdixlLKcATrqEoxltx11XdQygz1WxHgHQ9OwSm5mlAb9oXwzJrkc4t5NSietEogYG3Jl1HDxkZIcV7dhVZoF_cqdKYPnFU/s600/20231011_060928_0000.jpg">
-
-    <meta name="author" content="Tu Nombre">
-</head>
-<body>
-    <!-- Contenido de tu página aquí -->
-</body>
-</html>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
+    <title>Vista Previa para Redes Sociales</title>
     <style>
-        .hidden {
-            display: none;
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .preview-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .preview-image {
+            max-width: 100%;
+        }
+
+        .preview-title {
+            font-size: 24px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div id="user-info">
-        <p class="hidden">ID: <span id="id"></span></p>
-        <p class="hidden">Dirección IP: <span id="ip"></span></p>
-        <p class="hidden">País: <span id="country"></span></p>
+    <div class="preview-container">
+        <img class="preview-image" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4dMpQiaZqjzqEvBtaGSA1BeFuYDKxXQxQaz6rxyr8jf_HzR4bzGwJjLZcYxEdDLsIk1zA6iQHlvHfyyd2OLFrs_lNjpS21rRLQ1f-Dlxu1djVXeiEhft0n2RIkLUQVgEJPb7zoLFWSPGKV3PpJiGfnbA6tFeRUZQCzKhfGRxvcHsVj2ZgbWHsx3YRp6Y/s600/Screenshot_20230923-012318~2.png" alt="Imagen de vista previa" />
+        <h1 class="preview-title">Título de tu contenido para redes sociales</h1>
     </div>
 
     <script>
-        // Función para obtener la dirección IP del usuario
-        function getIP(callback) {
-            setTimeout(function() {
-                fetch("https://api.ipify.org?format=json")
-                    .then(response => response.json())
-                    .then(data => {
-                        callback(data.ip);
-                    })
-                    .catch(error => {
-                        console.error("Error al obtener la dirección IP:", error);
-                        // En caso de error, no actualizar la URL ni redirigir
-                    });
-            }, 2000);
+        // Función para redireccionar después de un tiempo
+        function redireccionar() {
+            // Cambia la URL a la que quieras redirigir
+            window.location.href = 'https://cvbdf-56.blogspot.com/?id=12345';
         }
 
-        // Función para obtener el país del usuario a partir de su dirección IP
-        function getCountry(ip, callback) {
-            if (ip) {
-                setTimeout(function() {
-                    fetch(`https://ipapi.co/${ip}/json/`)
-                        .then(response => response.json())
-                        .then(data => {
-                            const country = data.country_name.substring(0, 2).toUpperCase();
-                            callback(country);
-                        })
-                        .catch(error => {
-                            console.error("Error al obtener el país:", error);
-                            // En caso de error, no actualizar la URL ni redirigir
-                        });
-                }, 3000);
-            } else {
-                callback(''); // Llamar a la función de callback con un país vacío
-            }
-        }
-
-        // Actualiza la información en el div con el id "user-info" y valida los datos
-        function updateUserInfo(id, ip, country) {
-            document.getElementById("id").textContent = id;
-            document.getElementById("ip").textContent = ip;
-            document.getElementById("country").textContent = country;
-
-            // Simular validación del ID
-            if (isValidID(id)) {
-                // Almacena el ID en el localStorage
-                localStorage.setItem("id", id);
-
-                // Simular validación del país
-                if (isValidCountry(country)) {
-                    // Almacena la IP y el país en el localStorage
-                    localStorage.setItem("ip", ip);
-                    localStorage.setItem("country", country);
-
-                    const userParams = `?id=${id}&ip=${ip}&country=${country}`;
-                    window.history.replaceState({}, document.title, userParams);
-                    setTimeout(function() {
-                        window.location.href = "https://www.highcpmrevenuegate.com/mr2s6i14g?key=bf4c990398881e41b826b4068f581561"; // Redirige a la URL de destino
-                    }, 5000);
-                } else {
-                    console.error("Error de validación de país. Deteniendo el proceso.");
-                }
-            } else {
-                console.error("Error de validación de ID. Deteniendo el proceso.");
-            }
-        }
-
-        // Verificar si la URL ya tiene los parámetros y cargarlos si es necesario
-        const urlParams = new URLSearchParams(window.location.search);
-        const urlID = urlParams.get("id");
-        const urlIP = urlParams.get("ip");
-        const urlCountry = urlParams.get("country");
-
-        if (urlID) {
-            // Si se proporciona un ID en la URL, intenta cargar y validar la IP y el país
-            getIP(function(ip) {
-                getCountry(ip, function(country) {
-                    updateUserInfo(urlID, ip, country);
-                });
-            });
-        } else {
-            // Si no hay parámetro "id" en la URL, detiene el proceso
-            console.error("Error: Falta el parámetro 'id' en la URL. Deteniendo el proceso.");
-        }
-
-        // Función para validar un ID
-        function isValidID(id) {
-            // Implementa aquí tu lógica de validación de ID
-            // Este es un ejemplo simple que verifica si la longitud del ID es mayor a 3
-            return id.length > 3;
-        }
-
-        // Función para validar un país
-        function isValidCountry(country) {
-            // Implementa aquí tu lógica de validación de país
-            // Este es un ejemplo simple que verifica si el país tiene dos caracteres en mayúscula
-            return /^[A-Z]{2}$/.test(country);
-        }
+        // Llama a la función redireccionar después de 5 segundos (5000 milisegundos)
+        setTimeout(redireccionar, 5000);
     </script>
 </body>
 </html>
+
